@@ -23,3 +23,146 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+/* START STYLES TASK 1 */
+
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px #808080 solid;
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 16px;
+}
+
+#datetime-picker:hover {
+  border: 1px #000000 solid;
+}
+
+#datetime-picker:active {
+  border: 1px #4e75ff solid;
+}
+
+#datetime-picker:disabled {
+  border: 1px #808080 solid;
+  background-color: #fafafa;
+}
+
+.start-button {
+  width: 75px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+}
+
+.start-button:hover {
+  background-color: #6c8cff;
+}
+
+.start-button:disabled {
+  background-color: #cfcfcf;
+  color: #ffffff;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  max-width: 355px;
+  gap: 24px;
+  padding-top: 32px;
+  justify-content: space-between;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.value {
+  color: #2e2f42;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.label {
+  color: #2e2f42;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* END STYLES FOR TASK 1 */
+
+/* START STYLES FOR TASK 2 */
+
+.delay-label .delay-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.delay-input {
+  width: 420px;
+  height: 40px;
+  border: 1px #808080 solid;
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+.delay-input:hover {
+  border: 1px #000000 solid;
+}
+
+.delay-input:focus {
+  border: 1px #4e75ff solid;
+}
+
+.state-promise {
+  display: flex;
+  flex-direction: row;
+  max-width: 360px;
+  height: 60px;
+  margin-bottom: 16px;
+  gap: 48px;
+  padding: 24px 48px 8px 48px;
+  /* justify-content: space-between; */
+  /* padding: 0; */
+  /* align-items: center; */
+}
+
+.state-label {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.state-input {
+  border: 1px #808080 solid;
+  border-radius: 4px;
+}
+
+.state-input:hover,
+.state-input:focus {
+  border: 1px #000000 solid;
+}
+
+.state-button {
+  width: 440px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+}
+
+.start-button:hover {
+  background-color: #6c8cff;
+}
