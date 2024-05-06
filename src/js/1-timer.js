@@ -12,7 +12,8 @@ const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
 let userSelectedDate = null;
-let timerValue;
+let timerMiliseconds;
+let setIntervalId;
 
 const options = {
   enableTime: true,
@@ -28,14 +29,17 @@ const options = {
         message: `Please choose a data in the future`,
       });
     } else {
-      timerValue = convertMs(userSelectedDate - currentDate);
+      timerMiliseconds = userSelectedDate - currentDate;
+      startButton.removeAttribute('disabled');
     }
   },
 };
 
-startButton.addEventListener('click', () => {
-  updateTimerView(timerValue);
-});
+const onStartButtonClick = () => {
+  startButton.setAttribute('disabled', '');
+  datetimePicker.setAttribute('disabled', '');
+  setIntervalId = setInterval(updateTimer, 1000);
+};
 
 const fp = flatpickr(datetimePicker, options);
 
@@ -54,10 +58,20 @@ function convertMs(ms) {
 }
 
 function updateTimerView({ days, hours, minutes, seconds }) {
-  dataDays.innerHTML = days;
-  dataHours.innerHTML = hours;
-  dataMinutes.innerHTML = minutes;
-  dataSeconds.innerHTML = seconds;
+  dataDays.innerHTML = String(days).padStart(2, '0');
+  dataHours.innerHTML = String(hours).padStart(2, '0');
+  dataMinutes.innerHTML = String(minutes).padStart(2, '0');
+  dataSeconds.innerHTML = String(seconds).padStart(2, '0');
 }
 
-function updateTimer() {}
+function updateTimer() {
+  let timerObject = convertMs(timerMiliseconds);
+  updateTimerView(timerObject);
+  timerMiliseconds = timerMiliseconds - 1000;
+  if (timerMiliseconds <= 0) {
+    clearInterval(setIntervalId);
+    datetimePicker.removeAttribute('disabled');
+  }
+}
+
+startButton.addEventListener('click', onStartButtonClick);
