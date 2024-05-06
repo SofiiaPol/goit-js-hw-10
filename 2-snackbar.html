@@ -9,28 +9,40 @@
     <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/modulepreload-polyfill-3cfb730f.js">
     <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-77e16229.js">
     <link rel="stylesheet" href="/vanilla-app-template/assets/vendor-7a007824.css">
-    <link rel="stylesheet" href="/vanilla-app-template/assets/styles-10c40100.css">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/styles-5596409c.css">
   </head>
   <body>
     <form class="form">
-      <label>
+      <label class="delay-label">
         Delay (ms)
-        <input type="number" name="delay" required />
+        <input class="delay-input" type="number" name="delay" required />
       </label>
 
-      <fieldset>
+      <fieldset class="state-promise">
         <legend>State</legend>
-        <label>
-          <input type="radio" name="state" value="fulfilled" required />
+        <label class="state-label">
+          <input
+            class="state-input"
+            type="radio"
+            name="state"
+            value="fulfilled"
+            required
+          />
           Fulfilled
         </label>
-        <label>
-          <input type="radio" name="state" value="rejected" required />
+        <label class="state-label">
+          <input
+            class="state-input"
+            type="radio"
+            name="state"
+            value="rejected"
+            required
+          />
           Rejected
         </label>
       </fieldset>
 
-      <button type="submit">Create notification</button>
+      <button type="submit" class="state-button">Create notification</button>
     </form>
     
   </body>
